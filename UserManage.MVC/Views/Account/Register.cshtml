@@ -1,0 +1,61 @@
+﻿@model RegisterViewModel
+@{
+    ViewBag.Title = "用户注册";
+}
+<h1>用户注册</h1>
+<div class=" row">
+    <div class="col-md-12">
+        <form method="post" enctype="multipart/form-data">
+            <div asp-validation-summary="All"></div>
+            <div class="form-group">
+                <label asp-for="Email"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ChineseName"></label>
+                <input asp-for="ChineseName" class="form-control" />
+                <span asp-validation-for="ChineseName" class="text-danger"></span>
+            </div>
+            <calendar class="form-group">
+                <label asp-for="Gender"></label>
+                <select asp-for="Gender" class="custom-select mr-sm-2"
+                        asp-items="Html.GetEnumSelectList<GenderEnum>()">
+                </select>
+            </calendar>
+            <div class="form-group">
+                <label asp-for="Password"></label>
+                <input asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ConfirmPassword"></label>
+                <input asp-for="ConfirmPassword" class="form-control" />
+                <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+            </div>
+            <div class="form-group row">
+                <label asp-for="Icon" class="col-sm-2 col-form-label"></label>
+                <div class="col-sm-10">
+                    <div class="custom-file">
+                        <input asp-for="Icon" class="form-control custom-file-input" />
+                    </div>
+                    <label class="custom-file-label">创建头像</label>
+                </div>
+                <span asp-validation-for="Icon" class="text-danger"></span>
+            </div>
+            <button type="submit" class="btn btn-primary">注册</button>
+            @section Scripts{
+                <script>
+                    $(document).ready(function () {
+                        $(".custom-file").on("change", function () {
+                            $(this)
+                                .next(".custom-file-label")
+                                .html("已创建");
+
+                        });
+                    });
+                </script>
+            }
+        </form>
+    </div>
+</div>

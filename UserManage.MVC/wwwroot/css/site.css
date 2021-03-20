@@ -1,0 +1,12 @@
+﻿.imageThumbnail{
+    height:100px;
+    width:auto;
+}
+.cardflex {
+flex-direction:row;
+flex-wrap:wrap;
+justify-content:flex-start;
+align-items:flex-start;
+align-content:flex-start;
+
+}

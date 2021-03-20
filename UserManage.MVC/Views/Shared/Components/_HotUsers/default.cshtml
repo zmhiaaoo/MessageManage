@@ -1,0 +1,7 @@
+﻿@model IEnumerable<ApplicationUser>
+<ul>
+    @foreach (var item in Model)
+    {
+        <li>@item.ChineseName</li>
+    }
+</ul>

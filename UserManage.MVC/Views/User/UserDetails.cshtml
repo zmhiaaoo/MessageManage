@@ -1,0 +1,73 @@
+﻿@model UserDetailsViewModel
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<ApplicationUser> _signInManager
+@inject IPhotoRepository _photoRepository
+@{
+
+    ViewBag.Title = "个人页面";
+}
+
+<h1>@ViewBag.Title</h1>
+<div class="row m-3">
+    <div class="col-sm-9">
+        <table class="table table-borderless table-striped">
+            <thead>
+                <tr>
+
+                    <th scope="col">标题</th>
+                    <th scope="col">发布时间</th>
+                    @if (_signInManager.IsSignedIn(User))
+                    {
+                        <th scope="col">操作</th>
+                    }
+                </tr>
+            </thead>
+            <tbody>
+
+                @foreach (var message in Model.Messages)
+                {
+                    <tr>
+                        <td>
+                            <a asp-controller="home" asp-action="Single" asp-route-id="@message.Id">@message.Title</a>
+                        </td>
+                        <td>
+                            @message.PublishTime
+                        </td>
+                        <td>
+                            @if (_signInManager.IsSignedIn(User))
+                            {
+                                <form method="post" asp-action="DeleteMessage" asp-controller="home" asp-route-id="@message.Id">
+                                    <span id="confirmDelete_@message.Id" style="display:none">
+                                        <span>您确定要删除？</span>
+                                        <button type="submit" class="btn btn-danger">是</button>
+                                        <a href="#" class="btn btn-danger" onclick="confirmDelete('@message.Id ',false)">否</a>
+                                    </span>
+                                    <span id="deleteMessage_@message.Id">
+                                        <a href="#" class="btn btn-danger" onclick="confirmDelete('@message.Id ',true)">删除</a>
+                                    </span>
+                                </form>
+                            }
+                        </td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+    <div class="col-sm-3">
+        <div>
+            <span style="font:100">@Model.ChineseName</span>
+            @if (User.Identity.Name == Model.Email)
+            {
+                <a class="btn btn-primary" asp-action="EditUser" asp-route-id="@Model.UserId">修改</a>
+            }
+        </div>
+        <div>
+            <img src="~/images/Icons/@Model.IconPath" width="200" />
+        </div>
+        <div>发帖数：@Model.Messages.Count</div>
+    </div>
+</div>
+@section Scripts{
+    <script src="/js/CustomScript.js" asp-append-version="true"></script>
+}

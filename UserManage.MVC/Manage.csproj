@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>1099da9a-98ed-4e17-823e-50cd87b34c86</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Views\PartialViews\**" />
+    <Content Remove="Views\PartialViews\**" />
+    <EmbeddedResource Remove="Views\PartialViews\**" />
+    <None Remove="Views\PartialViews\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Views\Admin\ManageUserClaims.cshtml~RF1aa19005.TMP" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.3">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="NLog.Web.AspNetCore" Version="4.11.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\UserManage.BLL\MessageManage.BLL.csproj" />
+    <ProjectReference Include="..\UserManage.DLL\MessageManage.DLL.csproj" />
+  </ItemGroup>
+
+</Project>
