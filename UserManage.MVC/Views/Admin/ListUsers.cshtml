@@ -78,11 +78,11 @@
         <h1>所有角色</h1>
         <table>
             <thead>
-                <tr class="row">
-                    <th class="col-3">
+                <tr>
+                    <th scope="col">
                         角色
                     </th>
-                    <th class="col-9">
+                    <th scope="col">
                         操作
                     </th>
                 </tr>
@@ -99,7 +99,7 @@
                             <form method="post" asp-action="DeleteRole" asp-route-id="@item.Id">
                                 <span id="confirmDelete_@item.Id" style="display:none">
                                     <span>您确定要删除？</span>
-                                    <button type="submit" class="btn btn-danger">是</button>
+                                    <button type="submit" class="btn-sm btn-danger">是</button>
                                     <a href="#" class="btn btn-danger" onclick="confirmDelete('@item.Id ',false)">否</a>
                                 </span>
                                 <span id="deleteMessage_@item.Id">
