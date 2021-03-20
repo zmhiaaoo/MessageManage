@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using MessageManage.DLL;
+using MessageManage.DAL;
 using MessageManage.BLL;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;

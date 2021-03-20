@@ -1,4 +1,4 @@
-﻿using MessageManage.DLL;
+﻿using MessageManage.DAL;
 using MessageManage.BLL;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;

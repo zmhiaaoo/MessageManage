@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using MessageManage.BLL;
 
-namespace MessageManage.DLL
+namespace MessageManage.DAL
 {
    public class AppDbContext:IdentityDbContext<ApplicationUser>
     {

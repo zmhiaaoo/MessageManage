@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using MessageManage.BLL;
 
-namespace MessageManage.DLL
+namespace MessageManage.DAL
 
 {
     public interface IMessageRepository

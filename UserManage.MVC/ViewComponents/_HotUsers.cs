@@ -1,5 +1,5 @@
 ﻿using MessageManage.BLL;
-using MessageManage.DLL;
+using MessageManage.DAL;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;

@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace MessageManage.DLL
+namespace MessageManage.DAL
 {
 
     public class PhotoRepository : IPhotoRepository

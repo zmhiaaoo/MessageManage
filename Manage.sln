@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.30611.23
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MessageManage.BLL", "UserManage.BLL\MessageManage.BLL.csproj", "{84DCEA6F-0121-4054-93EB-EBE2DE1A43F5}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MessageManage.DLL", "UserManage.DLL\MessageManage.DLL.csproj", "{4D812FDB-1B61-4EC0-96FE-214E0C1C2413}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MessageManage.DAL", "UserManage.DLL\MessageManage.DAL.csproj", "{4D812FDB-1B61-4EC0-96FE-214E0C1C2413}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Manage", "UserManage.MVC\Manage.csproj", "{C2124E5B-663B-4FDF-AC06-3E94885E43FF}"
 EndProject

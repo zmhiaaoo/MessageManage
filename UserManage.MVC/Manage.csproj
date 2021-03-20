@@ -26,7 +26,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\UserManage.BLL\MessageManage.BLL.csproj" />
-    <ProjectReference Include="..\UserManage.DLL\MessageManage.DLL.csproj" />
+    <ProjectReference Include="..\UserManage.DLL\MessageManage.DAL.csproj" />
   </ItemGroup>
 
 </Project>

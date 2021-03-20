@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using MessageManage.BLL;
-using MessageManage.DLL;
 
-namespace MessageManage.DLL
+
+namespace MessageManage.DAL
 {
     public class SQLMessageRepository : IMessageRepository
     {

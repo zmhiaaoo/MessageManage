@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace MessageManage.DLL.Migrations
+namespace MessageManage.DAL.Migrations
 {
     public partial class inital : Migration
     {

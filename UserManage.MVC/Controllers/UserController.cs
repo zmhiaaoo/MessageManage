@@ -1,6 +1,6 @@
 ﻿using Manage.ViewModel;
 using MessageManage.BLL;
-using MessageManage.DLL;
+using MessageManage.DAL;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;

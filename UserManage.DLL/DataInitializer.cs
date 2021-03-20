@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 
 
-namespace MessageManage.DLL
+namespace MessageManage.DAL
 {
     public static class DataInitializer
     {

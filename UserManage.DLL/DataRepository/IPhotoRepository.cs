@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace MessageManage.DLL
+namespace MessageManage.DAL
 {
 
     public interface IPhotoRepository
