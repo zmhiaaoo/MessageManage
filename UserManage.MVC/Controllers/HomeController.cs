@@ -216,11 +216,12 @@ namespace Manage.Controllers
         #endregion
 
         [HttpPost]
-        public IActionResult DeteleMessage(int id)
+        public async Task<IActionResult> DeleteMessage(int id)
         {
             string userId = _messageRepository.GetMessageById(id).ApplicationUserId;
+            string userEmail = (await _userManager.FindByIdAsync(userId)).Email;
             _messageRepository.Delete(id);
-            return RedirectToAction("UserDetails", "User", userId);
+            return RedirectToAction("UserDetails", "User",new { email= userEmail } );
         }
     }
 }

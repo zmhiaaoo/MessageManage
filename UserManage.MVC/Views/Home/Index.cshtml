@@ -76,7 +76,7 @@
                             <td>
                                 @if (User.IsInRole("admin"))
                                 {
-                                    <form method="post" asp-action="delete" asp-route-id="@item.Id">
+                                    <form method="post" asp-action="deletemessage" asp-route-id="@item.Id">
                                         <span id="confirmDelete_@item.Id" style="display:none">
                                             <span>您确定要删除？</span>
                                             <button type="submit" class="btn btn-danger">是</button>

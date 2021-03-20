@@ -24,7 +24,7 @@ namespace MessageManage.DAL
                 .SelectMany(e => e.GetForeignKeys());
             foreach (var foreignkey in foreignKeys)
             {
-                foreignkey.DeleteBehavior = DeleteBehavior.Restrict;
+                foreignkey.DeleteBehavior = DeleteBehavior.NoAction;
             }
         }
     }

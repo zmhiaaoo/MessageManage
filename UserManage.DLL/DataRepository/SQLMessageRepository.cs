@@ -9,20 +9,25 @@ namespace MessageManage.DAL
     public class SQLMessageRepository : IMessageRepository
     {
         private readonly AppDbContext _context;
+        private readonly IPhotoRepository photoRepository;
         private readonly ILogger logger;
-        public SQLMessageRepository(AppDbContext context,ILogger<SQLMessageRepository> logger)
+        public SQLMessageRepository(AppDbContext context,
+            ILogger<SQLMessageRepository> logger,
+            IPhotoRepository photoRepository)
         {
-           _context=context;
+            _context = context;
             this.logger = logger;
+            this.photoRepository = photoRepository;
         }
         public Message Delete(int id)
         {
             Message message = _context.Messages.Find(id);
-            if (message!=null)
+            photoRepository.DeleteAllPhotosOfMessage(id);
+            if (message != null)
             {
                 _context.Messages.Remove(message);
-                _context.SaveChanges();
             }
+            _context.SaveChanges();
             return message;
         }
 
@@ -55,7 +60,7 @@ namespace MessageManage.DAL
             var userMessages = from s in allMessages
                                where s.ApplicationUserId == user.Id
                                select s;
-                    return userMessages;
+            return userMessages;
         }
 
         public Message Insert(Message message)
